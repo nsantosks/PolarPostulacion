@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propuesta Nestor Santos - Analista de Datos e Inteligencia Comercial para Empresas Polar</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+        :root {
+            --primary-color: #0033A0;   /* Azul Polar */
+            --secondary-color: #FFC72C; /* Amarillo P.A.N. / Dorado Cerveza */
+            --text-color: #212529;      /* Negro suave, buena legibilidad */
+            --light-text-color: #495057;/* Gris oscuro para texto secundario */
+            --header-text-color: #FFFFFF;
+            --bg-color: #f8f9fa;
+            --card-bg: #FFFFFF;
+            --border-color: #dee2e6;
+            --highlight-bg-color: #FFF9E6; /* Amarillo muy pálido, derivado del secundario */
+            --shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+            --hover-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            --button-text-color: #FFFFFF; /* Texto blanco para botones con fondo azul */
+            --button-secondary-text-color: #0033A0; /* Texto azul para botones con fondo amarillo, mejor contraste */
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: var(--header-text-color);
+            padding: 40px 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+
+        header img.profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid var(--secondary-color); /* Borde amarillo */
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        header h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5em;
+            margin: 10px 0 5px 0;
+        }
+
+        header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.5em;
+            font-weight: 400;
+            color: var(--secondary-color); /* Subtítulo en amarillo */
+            margin: 0;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            margin-bottom: 25px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            box-shadow: var(--hover-shadow);
+        }
+
+        .card h3 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--primary-color);
+            font-size: 1.8em;
+            margin-top: 0;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .highlight {
+            background-color: var(--highlight-bg-color);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        strong {
+            color: var(--primary-color);
+        }
+        
+        ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%230033A0' class='bi bi-check-circle-fill' viewBox='0 0 16 16'%3E%3Cpath d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z'/%3E%3C/svg%3E"); /* Check azul */
+            background-repeat: no-repeat;
+            background-position: 0 5px;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: var(--light-text-color);
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color); /* Botón principal azul */
+            color: var(--button-text-color); /* Texto blanco */
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            text-align: center;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-button:hover {
+            background-color: #00227A; /* Azul más oscuro al pasar el mouse */
+            transform: translateY(-2px);
+        }
+        
+        .cta-button.secondary { /* Para botones con fondo amarillo */
+            background-color: var(--secondary-color);
+            color: var(--button-secondary-text-color); /* Texto azul */
+        }
+        .cta-button.secondary:hover {
+             background-color: #E6B325; /* Amarillo más oscuro */
+        }
+
+
+        .dashboard-preview {
+            text-align: center;
+        }
+
+        .dashboard-preview img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 0.9em;
+            color: var(--light-text-color);
+            background-color: var(--card-bg);
+            border-top: 1px solid var(--border-color);
+            border-radius: 0 0 8px 8px;
+            margin-top: -25px; /* Para conectar con la última tarjeta */
+        }
+
+        .company-profile {
+            background-color: #e7f0ff; /* Un azul muy pálido */
+            padding: 15px;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--primary-color);
+        }
+        .company-profile h4 {
+            margin-top: 0;
+            color: var(--primary-color);
+        }
+        .company-profile p, .company-profile ul {
+            font-size: 0.95em;
+            color: var(--text-color);
+        }
+         .company-profile ul li {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='%230033A0' class='bi bi-arrow-right-short' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z'/%3E%3C/svg%3E"); /* Flecha azul */
+            background-position: 0 7px;
+            padding-left: 20px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+            header h2 {
+                font-size: 1.2em;
+            }
+            .card h3 {
+                font-size: 1.5em;
+            }
+            .container {
+                width: 95%;
+            }
+            .cta-button {
+                padding: 10px 15px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="https://www.dropbox.com/scl/fi/ssmwr3w27v0e50tdzicgm/ProfileV01.jpg?rlkey=6rio5ubg2k4o0kqqwux8ug2dp&dl=1" alt="Foto de Nestor Santos" class="profile-pic">
+        <h1>Nestor Santos</h1>
+        <h2>Analista de Datos | Especialista en Inteligencia Comercial y Optimización de Negocios</h2>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h3>Mi Propuesta de Valor para Empresas Polar</h3>
+            <p>
+                Con una trayectoria como MBA e Ingeniero Mecánico, y <span class="highlight">más de 5 años de experiencia</span> transformando datos en estrategias accionables, me dirijo a <strong>Empresas Polar</strong> con profundo respeto por su legado y su papel fundamental en Venezuela. Mi objetivo es aportar mis competencias en <span class="highlight">Análisis de Datos e Inteligencia Comercial</span> para potenciar aún más el liderazgo de sus icónicas marcas y optimizar sus operaciones en un mercado dinámico.
+            </p>
+            <p>
+                Entiendo que <strong>Empresas Polar</strong>, con su vasto portafolio en alimentos y bebidas, se beneficia enormemente de una profunda comprensión del consumidor y de la eficiencia en toda su cadena de valor. Mi fortaleza radica en convertir datos complejos (de ventas, mercado, operaciones) en <span class="highlight">insights claros y accionables</span> que impulsen la toma de decisiones estratégicas, mejoren la rentabilidad y fortalezcan la conexión con el consumidor venezolano.
+            </p>
+        </div>
+
+        <div class="card">
+            <h3>Capacidad Analítica e Inteligencia Comercial al Servicio de Polar</h3>
+            <p>
+                Mi conjunto de habilidades está diseñado para extraer el máximo valor de los datos en un entorno como el de <strong>Empresas Polar</strong>:
+            </p>
+            <ul>
+                <li><strong>Análisis de Mercado y Tendencias de Consumo:</strong> Identificar patrones de comportamiento, preferencias y oportunidades emergentes para marcas como Harina P.A.N., Polar Pilsen o Mavesa.</li>
+                <li><strong>Optimización de Portafolio y Ventas:</strong> Analizar el rendimiento de productos, canales de distribución y estrategias de precios para maximizar la rentabilidad y la cobertura del mercado.</li>
+                <li><strong>Inteligencia de Negocios con Power BI:</strong> Desarrollar dashboards interactivos para visualizar KPIs de ventas, producción, inventario y marketing, facilitando decisiones ágiles y basadas en datos.</li>
+                <li><strong>Modelado de Datos y SQL:</strong> Estructurar y analizar grandes volúmenes de datos para segmentación de clientes, análisis de la cadena de suministro y evaluación de la efectividad promocional.</li>
+                <li><strong>Excel Avanzado y Google Workspace:</strong> Herramientas versátiles para análisis detallados, modelado financiero y colaboración eficiente.</li>
+                <li><strong>Gestión de Procesos (BPM) y Calidad (TQM):</strong> Aplicar un enfoque analítico para optimizar procesos productivos y comerciales, buscando la eficiencia y la excelencia que caracterizan a Polar.</li>
+                <li><strong>Inteligencia Artificial (Conceptual y Aplicada):</strong> Explorar aplicaciones en pronóstico de demanda, optimización logística y personalización de la oferta.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Alineación Estratégica con el Espíritu de Empresas Polar</h3>
+             <div class="company-profile">
+                <h4>Comprendiendo a Empresas Polar:</h4>
+                <p>Una corporación con más de 80 años de historia, comprometida con:</p>
+                <ul>
+                    <li>Mejorar la calidad de vida en Venezuela.</li>
+                    <li>Ofrecer productos y servicios de excelencia (Calidad).</li>
+                    <li>Innovación constante.</li>
+                    <li>Valores como honestidad, respeto, justicia y solidaridad.</li>
+                    <li>Un fuerte compromiso con Venezuela y su gente.</li>
+                    <li>Marcas líderes y queridas en alimentos y bebidas.</li>
+                </ul>
+            </div>
+            <p>
+                Mi enfoque profesional resuena profundamente con la filosofía de <strong>Empresas Polar</strong>:
+            </p>
+            <ul>
+                <li>Mi dedicación a <span class="highlight">transformar datos en insights accionables</span> se alinea con el compromiso de Polar con la <strong>calidad y la excelencia</strong>, buscando siempre la mejor manera de servir al mercado.</li>
+                <li>La capacidad de generar <span class="highlight">Inteligencia Comercial</span> es vital para entender y anticipar las necesidades del consumidor venezolano, un pilar para la <strong>innovación</strong> y el mantenimiento del liderazgo de sus marcas.</li>
+                <li>Mi experiencia en <span class="highlight">optimización de procesos y operaciones</span> (BPM, TQM) puede contribuir a la eficiencia y sostenibilidad que Polar persigue en su cadena de valor.</li>
+                <li>Fomento el <span class="highlight">liderazgo basado en la inteligencia emocional y la colaboración</span>, valores esenciales para construir equipos de alto rendimiento comprometidos con los objetivos de la organización, similar al énfasis de Polar en su talento humano.</li>
+                <li>Busco generar <span class="highlight">mejoras medibles y sostenibles</span>, contribuyendo al propósito de Polar de impactar positivamente en el país.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Contribución Específica a los Negocios de Empresas Polar</h3>
+            <p>
+                Como Analista de Datos e Inteligencia Comercial, puedo contribuir a <strong>Empresas Polar</strong> en áreas como:
+            </p>
+            <ul>
+                <li><strong>Optimización del portafolio de productos:</strong> Analizar datos de ventas, costos y márgenes por producto, región y canal para identificar oportunidades de crecimiento o racionalización.</li>
+                <li><strong>Mejora de la eficiencia en la cadena de suministro:</strong> Desde el análisis de la demanda hasta la optimización de rutas de distribución, utilizando datos para reducir costos y mejorar tiempos de entrega.</li>
+                <li><strong>Desarrollo de estrategias de precios y promociones:</strong> Evaluar la elasticidad de la demanda y el impacto de las promociones para maximizar ingresos y cuota de mercado.</li>
+                <li><strong>Segmentación avanzada de clientes:</strong> Para entender mejor los diferentes perfiles de consumidores de las marcas de Polar y personalizar las estrategias de marketing y comunicación.</li>
+                <li><strong>Soporte a la innovación:</strong> Utilizar datos de mercado y tendencias para identificar nuevas oportunidades de productos o mejoras a los existentes.</li>
+                <li><strong>Medición del ROI de marketing:</strong> Evaluar la efectividad de las campañas y actividades de marketing para optimizar la inversión.</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h3>Ejemplo de Dashboard Interactivo: Visualizando Oportunidades</h3>
+            <p>
+                Para demostrar mi habilidad en convertir datos en información visual y útil, le invito a explorar un dashboard de ejemplo. Aunque general, ilustra cómo herramientas de Power BI pueden ser adaptadas para monitorear el desempeño de ventas de las marcas de <strong>Empresas Polar</strong>, analizar tendencias de mercado o la eficiencia de la distribución, proporcionando una base sólida para decisiones estratégicas.
+            </p>
+            <div class="dashboard-preview">
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNzE1MGYxMGMtMTU0MC00NGI5LWE5NTUtZTg0MmVkMjQyZDNjIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9" target="_blank">
+                    <img src="https://www.dropbox.com/scl/fi/7vqkc2gsgy3xizy0agx59/CapturaDashboard.JPG?rlkey=kzm11w5zkzinvlm5xsets3t1z&dl=1" alt="Captura de Dashboard de Ejemplo">
+                </a>
+                <a href="https://app.powerbi.com/view?r=eyJrIjoiNzE1MGYxMGMtMTU0MC00NGI5LWE5NTUtZTg0MmVkMjQyZDNjIiwidCI6IjZmMGJiNzJmLTUzNzctNGRkZi05MzZhLWI2YzcyYmYyMWFlMiIsImMiOjF9" target="_blank" class="cta-button secondary">Ver Dashboard Interactivo</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Oportunidad de Conversar y Aportar Valor</h3>
+            <p>
+                Me entusiasma la posibilidad de aportar mi conocimiento y experiencia a una organización tan emblemática como <strong>Empresas Polar</strong>. Estoy convencido de que mis habilidades en análisis de datos e inteligencia comercial pueden generar un impacto positivo y medible.
+            </p>
+            <p>
+                Agradecería la oportunidad de conversar sobre cómo puedo contribuir a sus objetivos. Puede conocer más sobre mi perfil profesional a través de los siguientes enlaces:
+            </p>
+            <div class="text-center">
+                <a href="https://www.linkedin.com/in/ingnsantos/" target="_blank" class="cta-button">Perfil de LinkedIn</a>
+                <a href="https://drive.google.com/file/d/1A0sgHubVdRWJTrTSNpFGu2ZgvpbrL7xo/view?usp=drive_link" target="_blank" class="cta-button">Descargar CV</a>
+            </div>
+            <p class="text-center" style="margin-top: 20px;">
+                Gracias por su tiempo y consideración.
+            </p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Propuesta de Valor Personalizada de Nestor Santos para <strong>Empresas Polar</strong>.</p>
+        <p>© <span id="currentYear"></span> Nestor Santos. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>
